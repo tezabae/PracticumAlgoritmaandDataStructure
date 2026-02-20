@@ -100,7 +100,7 @@ public class schedule {
             }
         }
         if (!found) {
-            System.out.println("Mata kuliah " + cariMatkul + " tidak ditemukan.");
+            System.out.println("Mata kuliah " + cariMatkul + " tidak ditemukan/NOT FOUND.");
         }
     }
 }
