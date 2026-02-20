@@ -18,5 +18,9 @@ public class studentMain27 {
         mhs2.updateIPK(3.8);
         mhs2.tampilkanInformasi();
 
+        mahasiswa27 mhsMartin = new mahasiswa27("Martin", "254107020200", "TI-1C", 3.7);
+            mhsMartin.tampilkanInformasi();
+
+
     }
 }
