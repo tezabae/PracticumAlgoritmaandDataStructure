@@ -13,6 +13,10 @@ public class studentMain27 {
         mhs1.ubahKelas("TI-1I");
         mhs1.updateIPK(3.9);
         mhs1.tampilkanInformasi();
+        
+        mahasiswa27 mhs2 = new mahasiswa27("Zhao Yufan", "254107020199", "TI-1B", 3.6);
+        mhs2.updateIPK(3.9);
+        mhs2.tampilkanInformasi();
 
     }
 }

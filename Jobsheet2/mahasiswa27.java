@@ -7,6 +7,16 @@ public class mahasiswa27 {
     String kelas;
     double ipk;
 
+    public mahasiswa27() {
+    }
+
+    public mahasiswa27(String nama, String nim, String kelas, double ipk) {
+        this.nama = nama;
+        this.nim = nim;
+        this.kelas = kelas;
+        this.ipk = ipk;
+    }
+
     // Method to display student information
     void tampilkanInformasi() {
         System.out.println("Nama: " + nama);
