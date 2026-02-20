@@ -10,7 +10,7 @@ public class studentFinalScore {
         double tugas = sc.nextDouble();
         System.out.print("Masukkan Nilai Kuis: ");
         double quiz = sc.nextDouble();
-        System.out.print("Masukkan Nilai UTS: ");
+        System.out.print("Masukkan Nilai UTS: ");90
         double uts = sc.nextDouble();
         System.out.print("Masukkan Nilai UAS: ");
         double uas = sc.nextDouble();
