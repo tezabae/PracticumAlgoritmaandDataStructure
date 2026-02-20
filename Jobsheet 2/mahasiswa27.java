@@ -1,23 +1,30 @@
 import java.util.Scanner;
 
 public class mahasiswa27 {
+// Atribut
     String nama;
     String nim;
     String kelas;
     double ipk;
 
+// Method to display student information
 void tampilkanInformasi() {
     System.out.println("Nama: " + nama);
     System.out.println("NIM: " + nim);
     System.out.println("Kelas: " + kelas);
     System.out.println("IPK: " + ipk);
 }
+// Method to change class
 void ubahKelas(String kelasBaru) {
     kelas = kelasBaru;
 }
+// Method to update IPK
 void updateIPK(double ipkBaru) {
-    ipk = ipkBaru;
+     if (ipkBaru >= 0.0 && ipkBaru <= 4.0) {
+         ipk = ipkBaru;
+     }
 }
+// Method to evaluate performance
 String nilaiKinerja () {
     if (ipk >= 3.5) {
         return "Kinerja sangat baik";
