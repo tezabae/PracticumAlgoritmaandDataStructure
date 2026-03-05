@@ -1,5 +1,6 @@
 package Jobsheet3;
 import java.util.Scanner;
+
 public class MataKuliahDemo {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -8,20 +9,31 @@ public class MataKuliahDemo {
         int sks, jumlahJam;
 
         for (int i = 0; i < 3; i++) {
-            System.out.print("Masukkan Data Mata Kuliah ke-" + (i + 1));
-            System.out.print("Kode       :");
+            System.out.println("Masukkan Data Mata Kuliah ke-" + (i + 1));
+            
+            System.out.print("Kode       : ");
             kode = sc.nextLine();
+            
             System.out.print("Nama       : ");
             nama = sc.nextLine();
+            
             System.out.print("SKS        : ");
             dummy = sc.nextLine();
             sks = Integer.parseInt(dummy);
+            
             System.out.print("Jumlah Jam : ");
             dummy = sc.nextLine();
             jumlahJam = Integer.parseInt(dummy);
+
             System.out.println("-----------------------------");
 
             arrayOfMataKuliah[i] = new MataKuliah26(kode, nama, sks, jumlahJam);
+        }
+
+        // MENAMPILKAN DATA
+        System.out.println("\nData Mata Kuliah:");
+        for (int i = 0; i < 3; i++) {
+            arrayOfMataKuliah[i].printInfo();
         }
     }
 }
