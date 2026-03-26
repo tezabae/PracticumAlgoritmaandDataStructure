@@ -20,9 +20,9 @@ public class Sum {
             return arr[l];
 
         }
-        int mid = (1+r)/2;
-        double lsum = totalDC(arr, 1, mid);
-        double rsum = totalDC(arr, mid+l, r);
+        int mid = (l+r)/2;
+        double lsum = totalDC(arr, l, mid);
+        double rsum = totalDC(arr, mid+1, r);
         return lsum+rsum;
     }
 
