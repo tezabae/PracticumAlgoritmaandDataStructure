@@ -3,12 +3,15 @@ package jobsheet6;
 public class Sorting27 {
     int[] data;
     int size;
-
-    public Sorting27(int[] data) {
-        this.data = data;
-        this.size = data.length;
+    
+    public Sorting27(int[] data, int size) {
+        this.size = size;
+        this.data = new int[size];
+        for (int i = 0; i < size; i++) {
+            this.data[i] = data[i];
+        }
     }
-
+    
     public void bubbleSort() {
         for (int i = 0; i < size - 1; i++) {
             for (int j = 0; j < size - i - 1; j++) {
@@ -20,10 +23,36 @@ public class Sorting27 {
             }
         }
     }
-
+    
+    public void selectionSort() {
+        for (int i = 0; i < size - 1; i++) {
+            int minIdx = i;
+            for (int j = i + 1; j < size; j++) {
+                if (data[j] < data[minIdx]) {
+                    minIdx = j;
+                }
+            }
+            int temp = data[minIdx];
+            data[minIdx] = data[i];
+            data[i] = temp;
+        }
+    }
+    
+    public void insertionSort() {
+        for (int i = 1; i < size; i++) {
+            int temp = data[i];
+            int j = i - 1;
+            while (j >= 0 && data[j] > temp) {
+                data[j + 1] = data[j];
+                j--;
+            }
+            data[j + 1] = temp;
+        }
+    }
+    
     public void print() {
-        for (int num : data) {
-            System.out.print(num + " ");
+        for (int i = 0; i < size; i++) {
+            System.out.print(data[i] + " ");
         }
         System.out.println();
     }
