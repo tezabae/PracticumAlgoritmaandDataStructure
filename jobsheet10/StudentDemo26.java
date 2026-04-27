@@ -1,7 +1,9 @@
 package jobsheet10;
+
 import java.util.Scanner;
+
 public class StudentDemo26 {
-        public static void main(String[] args) {
+    public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         StudentAssignmentStack26 stack = new StudentAssignmentStack26(5);
         int choice;
@@ -12,9 +14,10 @@ public class StudentDemo26 {
             System.out.println("2. Grade Assignment");
             System.out.println("3. View Top Assignment");
             System.out.println("4. View All Assignments");
+            System.out.println("5. View First Assignment Submitted");
             System.out.print("Choose a menu: ");
             choice = scan.nextInt();
-            scan.nextLine(); // consume newline
+            scan.nextLine();
 
             switch (choice) {
                 case 1:
@@ -35,7 +38,11 @@ public class StudentDemo26 {
                         System.out.print("Input grade (0-100): ");
                         int grade = scan.nextInt();
                         graded.grading(grade);
-                        System.out.println("Assignment grade of " + graded.name + " is " + graded.grade);
+                        System.out.printf("Assignment grade of %s is %d\n", graded.name, grade);
+
+                        // 🔹 Tambahan konversi ke biner
+                        String binary = stack.convertToBinary(grade);
+                        System.out.printf("Assignment grade in binary is %s\n", binary);
                     }
                     break;
 
@@ -50,7 +57,7 @@ public class StudentDemo26 {
                     stack.print();
                     break;
 
-                case 5: // 🔹 Tambahan case untuk nomor 5
+                case 5:
                     Student26 firstStd = stack.first();
                     if (firstStd != null) {
                         System.out.println("The first assignment comes from " + firstStd.name);
@@ -60,9 +67,8 @@ public class StudentDemo26 {
                 default:
                     System.out.println("Invalid choice!");
             }
-        } while (choice >= 1 && choice <= 4);
+        } while (choice >= 1 && choice <= 5);
 
         scan.close();
     }
 }
-

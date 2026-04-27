@@ -4,24 +4,20 @@ public class StudentAssignmentStack26 {
     Student26[] stack;
     int top, size;
 
-    // Constructor
     public StudentAssignmentStack26(int size) {
         this.size = size;
         top = -1;
         stack = new Student26[size];
     }
 
-    // Checking full
     boolean isFull() {
         return top == size - 1;
     }
 
-    // Checking empty
     boolean isEmpty() {
         return top == -1;
     }
 
-    // Push (submit tugas)
     void push(Student26 std) {
         if (!isFull()) {
             top++;
@@ -32,7 +28,6 @@ public class StudentAssignmentStack26 {
         }
     }
 
-    // Pop (take tugas for grading)
     Student26 pop() {
         if (!isEmpty()) {
             Student26 std = stack[top];
@@ -44,7 +39,6 @@ public class StudentAssignmentStack26 {
         }
     }
 
-    // Peek (see tugas paling atas)
     Student26 peek() {
         if (!isEmpty()) {
             return stack[top];
@@ -54,7 +48,6 @@ public class StudentAssignmentStack26 {
         }
     }
 
-    // Print all tugas
     void print() {
         if (!isEmpty()) {
             System.out.println("Assignment list:");
@@ -68,13 +61,28 @@ public class StudentAssignmentStack26 {
         System.out.println("");
     }
 
-    // 🔹 Adding method for question 5 (show first student submitted)
+    // 🔹 Method untuk nomor 5 (show first student submitted)
     Student26 first() {
         if (!isEmpty()) {
-            return stack[0]; // elemen pertama yang submit
+            return stack[0];
         } else {
             System.out.println("There is no data in Stack!!");
             return null;
         }
+    } // ← tutup method first dengan benar
+
+    // 🔹 Method untuk konversi nilai ke biner
+    String convertToBinary(int grade) {
+        ConversionStack26 binStack = new ConversionStack26();
+        while (grade > 0) {
+            int mod = grade % 2;
+            binStack.push(mod);
+            grade = grade / 2;
+        }
+        String binary = "";
+        while (!binStack.isEmpty()) {
+            binary += binStack.pop();
+        }
+        return binary;
     }
 }
