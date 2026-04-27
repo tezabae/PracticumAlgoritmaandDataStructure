@@ -61,7 +61,7 @@ public class StudentAssignmentStack26 {
         System.out.println("");
     }
 
-    // 🔹 Method untuk nomor 5 (show first student submitted)
+    // 🔹 Method for number 5 (show first student submitted)
     Student26 first() {
         if (!isEmpty()) {
             return stack[0];
@@ -71,7 +71,7 @@ public class StudentAssignmentStack26 {
         }
     } // ← tutup method first dengan benar
 
-    // 🔹 Method untuk konversi nilai ke biner
+    // 🔹 Method for converting grade to binary
     String convertToBinary(int grade) {
         ConversionStack26 binStack = new ConversionStack26();
         while (grade > 0) {

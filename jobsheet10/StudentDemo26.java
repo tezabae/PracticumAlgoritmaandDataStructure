@@ -14,7 +14,7 @@ public class StudentDemo26 {
             System.out.println("2. Grade Assignment");
             System.out.println("3. View Top Assignment");
             System.out.println("4. View All Assignments");
-            System.out.println("5. View First Assignment Submitted");
+            System.out.println("5. View the First Assignment Submitted");
             System.out.print("Choose a menu: ");
             choice = scan.nextInt();
             scan.nextLine();

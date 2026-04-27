@@ -21,7 +21,7 @@ public class ConversionStack26 {
 
     public void push(int data) {
         if (isFull()) {
-            System.out.println("Stack is already full-filled!!");
+            System.out.println("Stack is already full filled!!");
         } else {
             top++;
             binaryStack[top] = data;
@@ -30,7 +30,7 @@ public class ConversionStack26 {
 
     public int pop() {
         if (isEmpty()) {
-            System.out.println("Stack is still empty!!");
+            System.out.println("Stack is still empty!");
             return -1;
         } else {
             int data = binaryStack[top];
