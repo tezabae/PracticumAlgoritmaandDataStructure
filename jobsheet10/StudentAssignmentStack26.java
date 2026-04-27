@@ -11,12 +11,12 @@ public class StudentAssignmentStack26 {
         stack = new Student26[size];
     }
 
-    // Cek penuh
+    // Checking full
     boolean isFull() {
         return top == size - 1;
     }
 
-    // Cek kosong
+    // Checking empty
     boolean isEmpty() {
         return top == -1;
     }
@@ -32,7 +32,7 @@ public class StudentAssignmentStack26 {
         }
     }
 
-    // Pop (ambil tugas untuk dinilai)
+    // Pop (take tugas for grading)
     Student26 pop() {
         if (!isEmpty()) {
             Student26 std = stack[top];
@@ -44,7 +44,7 @@ public class StudentAssignmentStack26 {
         }
     }
 
-    // Peek (lihat tugas paling atas)
+    // Peek (see tugas paling atas)
     Student26 peek() {
         if (!isEmpty()) {
             return stack[top];
@@ -54,7 +54,7 @@ public class StudentAssignmentStack26 {
         }
     }
 
-    // Print semua tugas
+    // Print all tugas
     void print() {
         if (!isEmpty()) {
             System.out.println("Assignment list:");
@@ -66,5 +66,15 @@ public class StudentAssignmentStack26 {
             System.out.println("There is no data in Stack!!");
         }
         System.out.println("");
+    }
+
+    // 🔹 Adding method for question 5 (show first student submitted)
+    Student26 first() {
+        if (!isEmpty()) {
+            return stack[0]; // elemen pertama yang submit
+        } else {
+            System.out.println("There is no data in Stack!!");
+            return null;
+        }
     }
 }

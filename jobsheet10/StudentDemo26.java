@@ -50,6 +50,13 @@ public class StudentDemo26 {
                     stack.print();
                     break;
 
+                case 5: // 🔹 Tambahan case untuk nomor 5
+                    Student26 firstStd = stack.first();
+                    if (firstStd != null) {
+                        System.out.println("The first assignment comes from " + firstStd.name);
+                    }
+                    break;
+
                 default:
                     System.out.println("Invalid choice!");
             }
