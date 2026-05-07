@@ -9,7 +9,7 @@ public class ExcuseLetter26 {
 
     // Constructor without parameter
     public ExcuseLetter26() {}
-
+ 
     // Constructor with parameter
     public ExcuseLetter26(String id, String name, String className, char type, int duration) {
         this.id = id;
