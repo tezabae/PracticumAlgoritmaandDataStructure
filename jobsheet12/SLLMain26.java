@@ -5,22 +5,64 @@ public class SLLMain26 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         SingleLinkedList26 sll = new SingleLinkedList26();
+        int choice;
 
-        Student26 std1 = new Student26("001", "Zhao Yufan", "TI-1I", 3.95);
-        Student26 std2 = new Student26("002", "Edwards Martin", "TI-1I", 3.90);
-        Student26 std3 = new Student26("003", "Kim Juhoon", "TI-1I", 3.91);
-        Student26 std4 = new Student26("004", "Eom SeongHyeon", "TI-1I", 3.92);
-        Student26 std5 = new Student26("005", "Ahn Keonho", "TI-1I", 3.93);
+        do {
+            System.out.println("\n===== MENU =====");
+            System.out.println("1. Add First");
+            System.out.println("2. Add Last");
+            System.out.println("3. Insert After");
+            System.out.println("4. Insert At Index");
+            System.out.println("5. Print Linked List");
+            System.out.println("0. Exit");
+            System.out.print("Choose: ");
+            choice = sc.nextInt();
+            sc.nextLine(); // consume newline
 
-        sll.print();
-        sll.addFirst(std5);   // 005
-        sll.print();
-        sll.addLast(std1);    // 005, 001
-        sll.print();
+            switch (choice) {
+                case 1:
+                    Student26 stdFirst = inputStudent(sc);
+                    sll.addFirst(stdFirst);
+                    break;
+                case 2:
+                    Student26 stdLast = inputStudent(sc);
+                    sll.addLast(stdLast);
+                    break;
+                case 3:
+                    System.out.print("Enter key NIM (after which to insert): ");
+                    String key = sc.nextLine();
+                    Student26 stdAfter = inputStudent(sc);
+                    sll.insertAfter(stdAfter, key);
+                    break;
+                case 4:
+                    System.out.print("Enter index: ");
+                    int idx = sc.nextInt();
+                    sc.nextLine();
+                    Student26 stdAt = inputStudent(sc);
+                    sll.insertAt(idx, stdAt);
+                    break;
+                case 5:
+                    sll.print();
+                    break;
+                case 0:
+                    System.out.println("Exiting program...");
+                    break;
+                default:
+                    System.out.println("Invalid choice!");
+            }
+        } while (choice != 0);
+    }
 
-        sll.insertAfter(std4, "005"); // 005, 004, 001
-        sll.insertAfter(std3, "004"); // 005, 004, 003, 001
-        sll.insertAt(2, std2);        // 005, 004, 003, 002, 001
-        sll.print();
+    static Student26 inputStudent(Scanner sc) {
+        System.out.print("Enter NIM: ");
+        String nim = sc.nextLine();
+        System.out.print("Enter Name: ");
+        String name = sc.nextLine();
+        System.out.print("Enter Class: ");
+        String className = sc.nextLine();
+        System.out.print("Enter GPA: ");
+        double gpa = sc.nextDouble();
+        sc.nextLine(); 
+        return new Student26(nim, name, className, gpa);
     }
 }
